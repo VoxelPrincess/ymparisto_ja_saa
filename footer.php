@@ -1,8 +1,20 @@
-<footer id="site-footer">
+<?php
+$footer_class = 'footer';
+
+if (is_front_page() || is_home() || is_front_page() && is_home()) {
+    $footer_class .= ' is-home';
+}
+?>
+
+<footer class="<?= $footer_class ?>">
     <!-- &copy; Luonnonystävät Ry -->
-    <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Luonnonystävät Ry All Rights Reserved</p>
+    Copyright &copy;
+    <script>
+        document.write(new Date().getFullYear())
+    </script>
 </footer>
-</div>  <!-- site container -->
+
 <?php wp_footer(); ?>
 </body>
+
 </html>

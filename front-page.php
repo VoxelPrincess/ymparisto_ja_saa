@@ -1,13 +1,19 @@
-<?php $assets = get_template_directory_uri() . '/assets'; ?>
+<?php
+$assets = get_template_directory_uri() . '/assets';
+$pics = ['autumn.jpg', 'winter.jpg', 'summer.jpg', 'spring.jpg'];
+$random = array_rand($pics);
+$textStyle = 'background-image: url(' . $assets . '/' . $pics[$random] . ');';
+?>
 <?php get_header() ?>
 
 <div id="content">
-  <main class="weather" style="background-image: url(<?php print $assets ?>/autumn.webp);">
+  <main class="weather">
     <header class="weather__slogan">
-      <div>Something</div>
-      <div>from Helsinki</div>
+      <div style="<?= $textStyle ?>">Suomen</div>
+      <div style="<?= $textStyle ?>">Ympäristö ja sää</div>
     </header>
-    <footer class="weather__temp">18°, Partly cloudy</footer>
+    <!-- TODO: show actual weather -->
+    <footer class="weather__temp" style="<?= $textStyle ?>">18°, Partly cloudy</footer>
   </main>
 </div>
 

@@ -13,6 +13,7 @@
 
         <div class="single-page__news news">
             <?php
+            // Custom WP_Query to fetch the latest 3 posts from the 'uutiset' category
             $the_query = new WP_Query(array(
                 'category_name' => 'uutiset',
                 'orderby' => 'date',
@@ -31,11 +32,11 @@
                         </header>
                         <p class="news__date"><?php echo get_the_date(); ?></p>
                         <div class="news__teaser">
-                            <?php the_excerpt() ?> <!-- Show teaser only, new function -->
+                            <?php the_excerpt() ?> <!-- // the_excerpt() displays a short summary of the post content (teaser)-->
                         </div>
                     </aside>
                 <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
+                <?php wp_reset_postdata(); ?> <!--  Resets the global $post object to avoid conflicts with other queries -->
             <?php endif; ?>
         </div>
     </main>

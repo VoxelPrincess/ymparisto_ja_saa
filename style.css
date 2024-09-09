@@ -5,6 +5,15 @@ Theme author: Anna Bekharskaia
 
 @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
 
+:root {
+  --text-color: #3d4551;
+  --link-color: #005ea2;
+  --link-color-hover: #0050d8;
+  --badge-color: #a9aeb1;
+  --badge-emboss-color: #71767a;
+  --white: #fff;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -16,6 +25,17 @@ html {
 body {
   margin: 0;
   font-family: "Hanken Grotesk", sans-serif;
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--link-color-hover);
+  text-decoration: none;
 }
 
 .header {
@@ -24,7 +44,7 @@ body {
   justify-content: space-between;
   padding: 1rem 2rem;
   color: #000;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 1.2rem;
 }
 
@@ -41,6 +61,17 @@ body {
   text-decoration: none;
 }
 
+.header a:hover {
+  color: var(--link-color-hover);
+}
+
+.header__name a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
 .header__nav ul {
   list-style: none;
 }
@@ -48,8 +79,8 @@ body {
 .footer {
   padding: 1rem 2rem;
   text-align: center;
-  font-weight: 900;
-  font-size: 1.2rem;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .footer.is-home {
@@ -74,21 +105,31 @@ body {
   text-transform: uppercase;
 }
 
-.weather__slogan div,
+.weather__slogan {
+  margin: 0 0 1rem;
+}
+
+.weather__slogan a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.weather__slogan span,
 .weather__temp {
+  display: block;
   font-optical-sizing: auto;
   font-weight: 900;
-  color: #000;
   color: transparent;
   background-size: contain;
+  background-clip: text;
   -webkit-background-clip: text;
   filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 1));
-  line-height: 115%;
+  line-height: 100%;
   animation: stripes 5s infinite alternate;
   font-size: 25em;
 }
 
-.weather__slogan div + div {
+.weather__slogan span + span {
   font-size: 11em;
   padding-left: 0.1em;
 }
@@ -104,7 +145,7 @@ body {
 
 .news {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   margin: 2rem 0;
 }
 
@@ -118,9 +159,19 @@ body {
   font-weight: 700;
 }
 
+.news__header a {
+  text-decoration: none;
+}
+
 .news__date {
+  display: inline-flex;
   font-size: 0.8rem;
-  margin: 0.25rem 0 0.5rem;
+  margin: 0;
+  padding: 0 0.25rem;
+  background: var(--badge-color);
+  border-radius: 2px;
+  color: var(--white);
+  text-shadow: var(--badge-emboss-color) 1px 1px 0;
 }
 
 .news__teaser {
@@ -130,6 +181,61 @@ body {
 
 .news__teaser p {
   margin: 0;
+}
+
+.single-post__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.single-post__date {
+  display: inline-flex;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0 0.25rem;
+  background: var(--badge-color);
+  border-radius: 2px;
+  color: var(--white);
+  text-shadow: var(--badge-emboss-color) 1px 1px 0;
+}
+
+.single-post__category {
+  font-size: 0.8rem;
+}
+
+.single-category__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.single-category__children {
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.single-category__children a::after {
+  content: ",";
+}
+
+.single-category__children a:last-child::after {
+  content: "";
+}
+
+.single-category__post header {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.single-category__post p {
+  margin: 0.5rem 0;
+}
+
+.single-category hr {
+  margin: 1.5rem 0;
 }
 
 @keyframes stripes {

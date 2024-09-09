@@ -238,6 +238,10 @@ a:hover {
   margin: 1.5rem 0;
 }
 
+.single-category hr:last-child {
+  display: none;
+}
+
 @keyframes stripes {
   100% {
     background-position: 100px 0, 100px 0, 100px 0;

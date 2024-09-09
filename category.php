@@ -47,8 +47,6 @@
                     </article>
                     <hr>
                 <?php endwhile; ?>
-            <? else: ?>
-                <p>Ei kirjoituksia.</p>
             <?php endif; ?>
         </div>
     </main>

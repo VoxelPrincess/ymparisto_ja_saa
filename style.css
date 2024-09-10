@@ -116,6 +116,7 @@ a:hover {
 
 .weather__slogan span,
 .weather__temp {
+  /* https://codepen.io/kassandrasanch/pen/poxrmaa??editors=1100 */
   display: block;
   font-optical-sizing: auto;
   font-weight: 900;

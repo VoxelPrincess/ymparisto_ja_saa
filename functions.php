@@ -1,16 +1,16 @@
 <?php
 register_nav_menus(['primary' => 'Päävalikko']);
 
-function luonnonystavat_assets()
+function ymparisto_ja_saa_assets()
 {
     wp_enqueue_style('style', get_stylesheet_uri());
     /* New PHP function #1 get_template_directory_uri() 
 Retrieves template directory URI for the active theme.*/
-    wp_enqueue_script('luonnonystavat-script', get_template_directory_uri() . '/js/luonnonystavat.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('ymparisto_ja_saa-script', get_template_directory_uri() . '/js/ymparisto_ja_saa.js', array('jquery'), '1.0.0', true);
 }
-add_action('wp_enqueue_scripts', 'luonnonystavat_assets');
+add_action('wp_enqueue_scripts', 'ymparisto_ja_saa_assets');
 
-function luonnonystavat_widgets_init()
+function ymparisto_ja_saa_widgets_init()
 {
     register_sidebar(array(
         'name' => 'Sivupalkki',
@@ -21,7 +21,7 @@ function luonnonystavat_widgets_init()
         'after_title' => '</h2>'
     ));
 }
-add_action('widgets_init', 'luonnonystavat_widgets_init');
+add_action('widgets_init', 'ymparisto_ja_saa_widgets_init');
 
 function theme_excerpt_read_more()
 {
@@ -37,11 +37,11 @@ function theme_excerpt_length($length)
 }
 add_filter('excerpt_length', 'theme_excerpt_length');
 
-function luonnonystavat_theme_setup()
+function ymparisto_ja_saa_theme_setup()
 {
     add_theme_support('title-tag');
 }
-add_action('after_setup_theme', 'luonnonystavat_theme_setup');
+add_action('after_setup_theme', 'ymparisto_ja_saa_theme_setup');
 
 function theme_weather()
 {

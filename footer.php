@@ -7,7 +7,6 @@ if (is_front_page() || is_home() || is_front_page() && is_home()) {
 ?>
 
 <footer class="<?= $footer_class ?>">
-    <!-- &copy; Luonnonystävät Ry -->
     Copyright &copy;
     <script>
         document.write(new Date().getFullYear())

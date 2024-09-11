@@ -248,3 +248,31 @@ a:hover {
     background-position: 100px 0, 100px 0, 100px 0;
   }
 }
+
+@media only screen and (max-width: 950px) {
+  #content #news-box {
+    display: block;
+  }
+  #content #news-box .news {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #content {
+    display: block;
+  }
+  #content main {
+    width: 100%;
+  }
+  #content #sidebar {
+    width: 100%;
+  }
+
+  .news {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-direction: column;
+  }
+}

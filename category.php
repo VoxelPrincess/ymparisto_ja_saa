@@ -28,22 +28,30 @@
         <div class="single-category__posts">
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
-                    <article class="single-post single-category__post">
-                        <header class="single-post__title">
-                            <?php the_title(); ?>
-                        </header>
+                    <article class="category-post single-category__post">
+                        <aside class="category-post__image">
+                            <?php if (has_post_thumbnail()): ?>
+                                <?php the_post_thumbnail('medium'); ?>
+                            <?php endif; ?>
+                        </aside>
 
-                        <p class="single-post__meta">
-                            <span class="single-post__date">
-                                <?php echo get_the_date(); ?>
-                            </span>
+                        <div class="category-post__content">
+                            <header class="category-post__title">
+                                <?php the_title(); ?>
+                            </header>
 
-                            <span class="single-post__category">
-                                <?php echo get_the_category_list(', '); ?>
-                            </span>
-                        </p>
+                            <p class="category-post__meta">
+                                <span class="category-post__date">
+                                    <?php echo get_the_date(); ?>
+                                </span>
 
-                        <?php the_excerpt();  ?>
+                                <span class="category-post__category">
+                                    <?php echo get_the_category_list(', '); ?>
+                                </span>
+                            </p>
+
+                            <?php the_excerpt();  ?>
+                        </div>
                     </article>
                     <hr>
                 <?php endwhile; ?>
@@ -52,6 +60,8 @@
     </main>
 
     <?php get_sidebar(); ?>
+    <?php //the_widget('RandomEventWidget'); 
+    ?>
 </div>
 
 <?php get_footer(); ?>

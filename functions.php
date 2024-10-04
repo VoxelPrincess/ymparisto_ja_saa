@@ -13,12 +13,13 @@ add_action('wp_enqueue_scripts', 'ymparisto_ja_saa_assets');
 function ymparisto_ja_saa_widgets_init()
 {
     register_sidebar(array(
-        'name' => 'Sivupalkki',
+        'name' => 'Sidebar',
         'id' => 'sidebar',
         'before_widget' => '<div>',
         'after_widget' => '</div>',
         'before_title' => '<h2>',
-        'after_title' => '</h2>'
+        'after_title' => '</h2>',
+        'show_in_rest'   => true,
     ));
 }
 add_action('widgets_init', 'ymparisto_ja_saa_widgets_init');

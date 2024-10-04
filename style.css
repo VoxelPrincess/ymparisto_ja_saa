@@ -374,4 +374,22 @@ a:hover {
     margin: 2rem 0;
     flex-direction: column;
   }
+
+  .category-post {
+    flex-direction: column;
+  }
+
+  .category-post__image {
+    width: 100%;
+  }
+
+  .category-post__image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .the-event__info {
+    flex-direction: column;
+  }
 }
